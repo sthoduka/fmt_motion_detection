@@ -1,0 +1,3 @@
+[submodule "imreg_fmt"]
+	path = imreg_fmt
+	url = https://github.com/sthoduka/imreg_fmt.git
