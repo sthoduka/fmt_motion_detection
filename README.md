@@ -9,6 +9,10 @@ Dependencies
 * Eigen
 * Boost (only required in image_main for directory iteration)
 
+Clone
+------------
+    git clone --recursive https://github.com/sthoduka/fmt_motion_detection.git
+
 Compile
 -------
     mkdir build
