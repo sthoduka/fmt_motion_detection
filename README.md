@@ -38,3 +38,17 @@ Controls
     spacebar  pause
     c         continue
     q         quit
+
+Parameters
+----------
+Following are some of the parameters that can be tuned based on the application / environment.
+
+* [`min_area`](https://github.com/sthoduka/fmt_motion_detection/blob/master/src/motion_detection.cpp#L74): defines the minimum size of the bounding boxes. Currently this is 8 times the number of columns in the image. If you think the output bounding boxes are too small, you can increase this.
+
+* [`cluster_euclidean_threshold`](https://github.com/sthoduka/fmt_motion_detection/blob/master/src/motion_detection.cpp#L8): pixels in the contours which are closer than this threshold are considered to be part of one cluster. Currently it is set to a tenth of the number of columns in the image. If you think you are getting too many bounding boxes close to each other and want to combine them, then increase this threshold. Alternatively, perform non-maximum supression on the output list of bounding boxes.
+
+* [`difference_intensity_threshold`](https://github.com/sthoduka/fmt_motion_detection/blob/master/src/motion_detection.cpp#L7): intensities in the difference image below this threshold are set to black in the thresholded image. Currently this is set to 40; i.e. if the intensity of the pixel is below 40, it is set to black, and anything between 40 and 255 are set to white in the thresholded image. This is important if your lighting conditions significantly different from the ones I tested with. If your images are darker, you might want to lower this threshold.
+
+* [`rect_width and rect_height`](https://github.com/sthoduka/fmt_motion_detection/blob/master/src/image_differencing.cpp#L59): contours whose bounding rectangle is smaller in width or height than this threshold will be considered edges and masked out.
+
+* [`aspect_ratio`](https://github.com/sthoduka/fmt_motion_detection/blob/master/src/image_differencing.cpp#L68): if the aspect ratio of the bounding rectangles of contours is less than 1/6 or greater than 6, it will be considered an edge and masked out.
