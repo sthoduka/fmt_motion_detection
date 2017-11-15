@@ -27,6 +27,7 @@ int main(int argc, char **argv)
     vidCap >> im;
 
     bool resize = false;
+    int resize_by = 1;
     bool show_all_output = false;
     bool step_mode = false;
     bool use_edge_mask = true;
@@ -38,6 +39,7 @@ int main(int argc, char **argv)
             if (strcmp(argv[i], "-r") == 0)
             {
                 resize = true;
+                resize_by = atoi(argv[i+1]);
             }
             if (strcmp(argv[i], "-s") == 0)
             {
@@ -60,7 +62,7 @@ int main(int argc, char **argv)
 
     if (resize)
     {
-        cv::resize(im, im, cv::Size(im.cols/2, im.rows/2));
+        cv::resize(im, im, cv::Size(im.cols/resize_by, im.rows/resize_by));
     }
 
     MotionDetection md(im);
@@ -87,7 +89,7 @@ int main(int argc, char **argv)
 
         if (resize)
         {
-            cv::resize(im, im, cv::Size(im.cols/2, im.rows/2));
+            cv::resize(im, im, cv::Size(im.cols/resize_by, im.rows/resize_by));
         }
 
         md.detectMotion(im, output, show_all_output);

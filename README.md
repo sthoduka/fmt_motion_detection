@@ -27,7 +27,7 @@ Run
 
 Options
 -------
-    -r          resize frames to half
+    -r M        scale down frame size by a factor of M
     -s          show intermediate outputs
     -p          start paused
     -fps N      set process frame rate to N (assumes camera frame rate is 30)
