@@ -52,3 +52,21 @@ Following are some of the parameters that can be tuned based on the application 
 * [`rect_width and rect_height`](https://github.com/sthoduka/fmt_motion_detection/blob/master/src/image_differencing.cpp#L59): contours whose bounding rectangle is smaller in width or height than this threshold will be considered edges and masked out.
 
 * [`aspect_ratio`](https://github.com/sthoduka/fmt_motion_detection/blob/master/src/image_differencing.cpp#L68): if the aspect ratio of the bounding rectangles of contours is less than 1/6 or greater than 6, it will be considered an edge and masked out.
+
+
+Citation
+--------
+
+Please cite this work in your publications if you found it useful. Here is the BibTeX entry:
+
+```
+@inproceedings{Thoduka2017,
+Title = {{Motion Detection in the Presence of Egomotion Using the Fourier-Mellin Transform}},
+Author = {Thoduka, Santosh and Hegger, Frederik and Kraetzschmar, Gerhard K. and Pl{\"o}ger, Paul G.},
+Booktitle = {Proceedings of the 21st RoboCup International Symposium},
+Address = {Nagoya, Japan},
+Keywords = {motion detection, mobile robots, egomotion compensation, fourier-mellin transform},
+Timestamp = {2017.07.31},
+Year = {2017}
+}
+```
