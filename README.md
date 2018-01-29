@@ -1,4 +1,4 @@
-fmt_motion_detection uses the Fourier-Mellin transform for image registration and temporal differencing on the registered images to detect independent motions even in the presense of camera motion.
+fmt_motion_detection uses the Fourier-Mellin transform for image registration and temporal differencing on the registered images to detect independent motions even in the presense of camera motion. A brief explanation of the registration algorithm is provided [here](https://sthoduka.github.io/imreg_fmt/docs/overall-pipeline/).
 
 For images of size 320x240, the algorithm runs at approximately 11 Hz on an Intel Core i3 (1.7 GHz).
 
